@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service HumidityCollector {
+	rpc Collect(CollectRequest) returns (CollectResponse) {}
+}
+
+message CollectRequest {
+	string nodeName = 1;
+	float humidity = 2;
+	float temperature = 3;
+}
+
+message CollectResponse {
+	int32 statusCode = 1;
+	string statusMessage = 2;
+}
